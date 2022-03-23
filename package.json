@@ -1,0 +1,91 @@
+{
+  "name": "cloud-function-template",
+  "version": "1.0.0",
+  "description": "Template for firebase cloud functions.",
+  "repository": "https://github.com/SecretLab-com/cloud-function-template.git",
+  "author": "Secret Lab",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "npx husky install",
+    "lint": "tsc -p tsconfig.lib.json && eslint --ext .ts,.tsx src/",
+    "clean": "rm -rf lib/",
+    "build": "tsc -p tsconfig.lib.json",
+    "killdebug": "lsof -ti:5001 | xargs kill; lsof -ti:9229 | xargs kill; lsof -ti:8081 | xargs kill; lsof -ti:8083 | xargs kill",
+    "serve": "yarn clean && yarn build && firebase serve --only functions",
+    "firestore-pull": "./scripts/firestore-pull.sh",
+    "debug": "yarn killdebug && yarn clean && yarn build && echo \"You can now run AttachLocal VSCode Launch Target\" && firebase emulators:start --inspect-functions --import .",
+    "shell": "yarn clean && yarn build && firebase functions:shell",
+    "start": "yarn debug",
+    "start-full": "yarn firestore-pull && sleep 3 && yarn start",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "test": "jest",
+    "build-docs": "typedoc --ignoreCompilerErrors --out docs/ src/",
+    "docs": "yarn build-docs && serve -o docs",
+    "validate-create": "npx typescript-json-validator --collection --useNamedExport src/types/types.ts && eslint src/types/types.validator.ts --fix && sed -i .bak 's/export {/export type {/g' src/types/types.validator.ts && rm src/types/types.validator.ts.bak && prettier --write src/types/types.validator.ts"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "ajv": "^6.12.4",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase": "^8.10.0",
+    "firebase-admin": "^9.12.0",
+    "firebase-functions": "^3.15.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-typescript": "^7.9.0",
+    "@babel/runtime": "^7.8.4",
+    "@firebase/app-types": "^0.6.0",
+    "@types/cors": "^2.8.10",
+    "@types/jest": "^25.2.3",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "babel-jest": "^26.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.13.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "firebase-functions-test": "^0.1.6",
+    "husky": "7.0.2",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "serve": "^6.4.9",
+    "ts-jest": "^26.0.0",
+    "typedoc": "^0.17.6",
+    "typescript": "^3.8.3",
+    "typescript-json-validator": "^2.4.2"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testPathIgnorePatterns": [
+      "lib/",
+      "node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "testEnvironment": "node"
+  },
+  "private": true
+}

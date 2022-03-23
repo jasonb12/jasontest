@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "v12.13.0"
+        }
+      },
+      "@babel/preset-typescript"
+    ]
+  ]
+}

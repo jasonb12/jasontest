@@ -1,0 +1,129 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ketocoach-api</title>
+	<meta name="description" content="Documentation for ketocoach-api">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">ketocoach-api</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>ketocoach-api</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#fastcoach-mvp-api-development-workspace" id="fastcoach-mvp-api-development-workspace" style="color: inherit; text-decoration: none;">
+					<h1>Fastcoach MVP API development workspace</h1>
+				</a>
+				<p><img src="https://raw.githubusercontent.com/SecretLab-com/ketocoach/dev/assets/svg/KetoLogoText%20Outlines.svg?token=AIGL6Q4RVWEHZLILHVKXV4K6ZSJN6" alt="Alt Logo"></p>
+				<a href="#scripts" id="scripts" style="color: inherit; text-decoration: none;">
+					<h1>Scripts</h1>
+				</a>
+				<p><code>yarn build</code> -- build the src into lib (i.e. prepare the functions to be deployed) <br>
+					<code>yarn serve</code> -- build and serve the cloud functions locally <br>
+					<code>yarn shell</code> -- build and serve the cloud functions locally and launch into an interactive shell <br>
+					<code>yarn start</code> -- same as <code>yarn shell</code> <br>
+					<code>yarn deploy</code> -- deploy the cloud functions to the firebase project (WARNING: This will overwrite the live cloud functions in the fastcoach-fc firebase environment! Please run this with care!) <br>
+					<code>yarn logs</code> -- generate logs from the current cloud functions (generates local logs not real ones like you might see in the Stackdriver (GCP&#39;s logger for cloud functions)) <br>
+					<code>yarn test</code> -- run the current test suite using jest <br>
+					<code>build-docs</code> -- build documentation (using typedoc) automatically into the docs folder <br>
+				<code>docs</code> -- build documentation and automatically view it in a browser (using serve)</p>
+				<a href="#notes" id="notes" style="color: inherit; text-decoration: none;">
+					<h1>Notes</h1>
+				</a>
+				<p><b>node version:</b> This project expects to run using node 10 (10.18.1). <br> Make sure to run <code>nvm use</code> in the functions/ folder of this project to switch to node 10.18.1 automatically <br>
+				(if you don&#39;t have it installed npm will raise an error, so run <code>nvm install v10.18.1</code> in that case)</p>
+				<p><b>using nvm in npm scripts:</b> It would be nice if we could have npm set the node version with nvm automatically in the scripts, however, (as far as I know) this is not possible because of how the script env works! (without setting your global default node version to match the project) ;-; <br> (As a workaround I&#39;ve explicitly set the PATH to point at the npm config preset for the functions that run yarn to make them work in vscode)</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_https_index_.html">&quot;https/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_index_.html">&quot;index&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": {
+    "source": ".",
+    "predeploy": ["yarn lint", "yarn clean", "yarn build"],
+    "ignore": [
+      "**/.*",
+      "**/*.js.map",
+      "__tests__",
+      "assets",
+      "docs",
+      "lib/__tests__",
+      "node_modules",
+      "src",
+      "firebase.json",
+      "firestore.indexes.json",
+      "firestore.rules",
+      "README.md",
+      "storage.rules",
+      "tsconfig.json",
+      "tsconfig.lib.json",
+      "yarn.lock"
+    ],
+    "runtime": "nodejs12"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8081
+    },
+    "storage": {
+      "port": 9199,
+      "rules": "storage.rules"
+    },
+    "pubsub": {
+      "port": 8083
+    }
+  }
+}

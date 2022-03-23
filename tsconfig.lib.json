@@ -1,0 +1,5 @@
+{
+  // NOTE: this config exists to exclude tests from being compiled into the lib folder!
+  "extends": "./tsconfig.json",
+  "exclude": ["__tests__"]
+}
