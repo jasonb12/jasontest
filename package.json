@@ -64,9 +64,8 @@
     "prettier": "^2.0.5",
     "serve": "^6.4.9",
     "ts-jest": "^26.0.0",
-    "tsc": "^2.0.4",
     "typedoc": "^0.17.6",
-    "typescript": "^3.8.3",
+    "typescript": "^3.9.10",
     "typescript-json-validator": "^2.4.2"
   },
   "jest": {
