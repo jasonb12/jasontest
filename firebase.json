@@ -6,9 +6,8 @@
   "functions": {
     "source": ".",
     "predeploy": [
-      "yarn lint",
-      "yarn clean",
-      "yarn build"
+      "npm --prefix \"$RESOURCE_DIR\" run lint",
+      "npm --prefix \"$RESOURCE_DIR\" run build"
     ],
     "ignore": [
       "**/.*",
