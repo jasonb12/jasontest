@@ -5,7 +5,11 @@
   },
   "functions": {
     "source": ".",
-    "predeploy": ["yarn lint", "yarn clean", "yarn build"],
+    "predeploy": [
+      "yarn lint",
+      "yarn clean",
+      "yarn build"
+    ],
     "ignore": [
       "**/.*",
       "**/*.js.map",

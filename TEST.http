@@ -1,0 +1,26 @@
+###
+
+# @name basic
+GET https://us-central1-superdoo.cloudfunctions.net/api
+
+###
+
+# @name uname
+GET https://us-central1-superdoo.cloudfunctions.net/api/uname
+
+
+###
+
+# @name npm
+GET https://us-central1-superdoo.cloudfunctions.net/api/npm
+
+
+###
+# @name yarnversion
+GET https://us-central1-superdoo.cloudfunctions.net/api/yarnVersion
+
+
+###
+
+# @name yarnVersionLocal
+GET http://localhost:5001/superdoo/us-central1/api/yarnVersion
